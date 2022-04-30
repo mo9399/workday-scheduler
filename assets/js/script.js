@@ -12,10 +12,9 @@ $(document).ready(function() {
 
         //save in localStorage
         localStorage.setItem(time, text);
-    })
+    });
 
     //Load saved data from localStorage
-    $("#hour8 .description").val(localStorage.getItem("hour8"));
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
     $("#hour11 .description").val(localStorage.getItem("hour11"));
@@ -32,7 +31,7 @@ $(document).ready(function() {
 
         //loop over blocks
         $(".time-block").each(function() {
-            var blockHour = parseInt($(this).attr("id").spilt("hour")[1]);
+            var blockHour = parseInt($(this).attr("id").split("hour")[1]);
 
             //check if we have moved past this time
             if(blockHour < currentHour) {
